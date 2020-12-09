@@ -111,11 +111,11 @@ class Students extends Component
      */
     public function update()
     {
-        $validateData = $this->validate([
+        $validatedData = $this->validate([
             'firstname' => 'required',
-            'lastname ' => 'required',
-            'email    ' => 'required|email',
-            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
         ]);
         if ($this->ids) {
             $student = Student::find($this->ids);
