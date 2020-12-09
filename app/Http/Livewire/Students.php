@@ -39,16 +39,30 @@ class Students extends Component
 
     /**
      * resetInputFields
-     * バリデーションをした後に、生徒のデータを保存.
+     * Inputタグの中身を空にする.
      *
      * @return void
      */
     public function resetInputFields()
     {
+        $this->firstname = '';
+        $this->lastname = '';
+        $this->email = '';
+        $this->phone = '';
+    }
+
+    /**
+     * store
+     * バリデーションをした後に、生徒のデータを保存.
+     *
+     * @return void
+     */
+    public function store()
+    {
         $validateData = $this->validate([
         'firstname' => 'required',
         'lastname' => 'required',
-        'email' => 'required | email',
+        'email' => 'required|email',
         'phone' => 'required',
     ]);
 
